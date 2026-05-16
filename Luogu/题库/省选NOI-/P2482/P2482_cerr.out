@@ -1,0 +1,93 @@
+Play: 1
+==========================NOW STATUS========================
+D D F F F F h: 4 st: 1
+N N N D h: 4 st: 0
+J J J J h: 4 st: 0
+============================================================
+1 tried to use F
+1 tried to use F
+1 tried to use F
+1 tried to use F
+Play: 2
+==========================NOW STATUS========================
+D D F F F F h: 4 st: 1
+N N N D D D h: 4 st: 0
+J J J J h: 4 st: 0
+============================================================
+2 used N
+probably process nope 3 2 0
+2's N tried to reach 3
+2 succeeded
+3 no K to use
+3's health was 3
+probably process nope 1 2 0
+2's N tried to reach 1
+2 succeeded
+1 no K to use
+1's health was 3
+2's showType turned into 2
+2 used N
+probably process nope 3 2 0
+2's N tried to reach 3
+2 succeeded
+3 no K to use
+3's health was 2
+probably process nope 1 2 0
+2's N tried to reach 1
+2 succeeded
+1 no K to use
+1's health was 2
+2's showType turned into 2
+2 used N
+probably process nope 3 2 0
+2's N tried to reach 3
+2 succeeded
+3 no K to use
+3's health was 1
+probably process nope 1 2 0
+2's N tried to reach 1
+2 succeeded
+1 no K to use
+1's health was 1
+2's showType turned into 2
+Play: 3
+==========================NOW STATUS========================
+D D F F F F h: 1 st: 1
+D D D h: 4 st: 2
+J J J J J J h: 1 st: 0
+============================================================
+Play: 1
+==========================NOW STATUS========================
+D D F F F F F F h: 1 st: 1
+D D D h: 4 st: 2
+J J J J J J h: 1 st: 0
+============================================================
+1 tried to use F
+1 used F
+1 shown enemy to 2
+probably process nope 2 1 0
+1 made 1 damage to 2
+1 tried to use F
+1 used F
+1 shown enemy to 2
+probably process nope 2 1 0
+1 made 1 damage to 2
+1 tried to use F
+1 used F
+1 shown enemy to 2
+probably process nope 2 1 0
+1 made 1 damage to 2
+1 tried to use F
+1 used F
+1 shown enemy to 2
+probably process nope 2 1 0
+1 made 1 damage to 2
+Play: 3
+==========================NOW STATUS========================
+h: 1 st: 1
+DEAD h: 0 st: 2
+J J J J J J K D h: 1 st: 0
+============================================================
+3 tried to use K
+3 used K
+3 shown enemy to 1

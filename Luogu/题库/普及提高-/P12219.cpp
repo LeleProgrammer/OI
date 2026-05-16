@@ -1,0 +1,118 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define FRR(file) freopen(file,"r",stdin)
+#define FRW(file) freopen(file,"w",stdout)
+#define TIMESTAMP cerr<<fixed<<setprecision(3)<<clock()*1.0/CLOCKS_PER_SEC<<"s"<<endl;
+#define _rep(i,a,b) for (int i=(a);i<=(b);++i)
+#define _reps(i,a,b,c) for (int i=(a);i<=(b);c)
+#define _rrep(i,a,b) for (int i=(a);i>=(b);--i)
+#define _rreps(i,a,b,c) for (int i=(a);i>=(b);c)
+#define _iter(i,a) for (auto i=a.begin();i!=a.end();++i)
+#define _graph(i,u) for (int i=h[u];~i;i=ne[i])
+#define _dinic(i,u) for (int i=cur[u];~i && k<limit;i=ne[i])
+#define rint register int
+#define LL long long
+#define i32 signed
+#define i64 long long
+#define i128 __int128
+#define u32 unsigned
+#define u64 unsigned long long
+typedef pair<int,int> pii;
+typedef pair<int,pii> piii;
+typedef pair<double,double> pdd;
+
+namespace IO {
+    template<typename T> inline void read(T& x) {
+        int s=1; char c=getchar(); x=0;
+        while (!isdigit(c)) { if (c=='-') s=-1; c=getchar(); }
+        while (isdigit(c) && c!=EOF) x=x*10+(c-'0'),c=getchar();
+        x*=s;
+    }
+    inline void readstr(string& x) {
+        x.clear(); char c=getchar();
+        while (isspace(c)) c=getchar();
+        while (!isspace(c) && c!=EOF) x.push_back(c),c=getchar();
+    }
+    inline void readstr(char* x) {
+        int idx=0; char c=getchar();
+        while (isspace(c)) c=getchar();
+        while (!isspace(c) && c!=EOF) x[idx++]=c,c=getchar();
+        x[idx]='\0';
+    }
+    template<typename T> inline void write(T x) {
+        if (x<0) putchar('-'),x=-x;
+        if (x/10) write(x/10);
+        putchar('0'+(x%10));
+    }
+    template<typename T> inline void writesp(T x) { write(x); putchar(' '); }
+    template<typename T> inline void writeln(T x) { write(x); putchar(10); }
+    inline void writestr(string x) { _iter(it,x) putchar(*it); }
+    inline void writestr(char* x) { _rep(i,0,strlen(x)-1) putchar(x[i]); }
+    inline void writestrsp(string x) { _iter(it,x) putchar(*it); putchar(' '); }
+    inline void writestrsp(char* x) { _rep(i,0,strlen(x)-1) putchar(x[i]); putchar(' '); }
+    inline void writestrln(string x) { _iter(it,x) putchar(*it); putchar(10); }
+    inline void writestrln(char* x) { _rep(i,0,strlen(x)-1) putchar(x[i]); putchar(10); }
+};
+
+using namespace IO;
+
+const int N=15;
+
+int n;
+char s[N];
+
+int main() {
+    readstr(s+1),n=strlen(s+1);
+    bool flag=false;
+    _rep(i,1,n) if (s[i]=='+' || s[i]=='-' || s[i]=='*' || s[i]=='/') flag=true;
+    if (flag) {
+        int a=0,b=0;
+        if (s[1]=='?') { // ? op a = b
+            int i=1;
+            while (i<=n && !isdigit(s[i])) ++i;
+            while (i<=n && isdigit(s[i])) a=a*10+s[i]-'0',++i;
+            while (i<=n && !isdigit(s[i])) ++i;
+            while (i<=n) b=b*10+s[i]-'0',++i;
+            if (s[2]=='+') write(b-a);
+            else if (s[2]=='-') write(b+a);
+            else if (s[2]=='*') write(b/a);
+            else write(b*a);
+        } else if (s[n]=='?') { // a op b = ?
+            int i=1;
+            while (i<=n && isdigit(s[i])) a=a*10+s[i]-'0',++i;
+            char t=s[i];
+            while (i<=n && !isdigit(s[i])) ++i;
+            while (i<=n && isdigit(s[i])) b=b*10+s[i]-'0',++i;
+            if (t=='+') write(a+b);
+            else if (t=='-') write(a-b);
+            else if (t=='*') write(a*b);
+            else write(a/b);
+        } else { // a op ? = b
+            int i=1;
+            while (i<=n && isdigit(s[i])) a=a*10+s[i]-'0',++i;
+            char t=s[i];
+            while (i<=n && !isdigit(s[i])) ++i;
+            while (i<=n) b=b*10+s[i]-'0',++i;
+            if (t=='+') write(b-a);
+            else if (t=='-') write(a-b);
+            else if (t=='*') write(b/a);
+            else write(a/b);
+        }
+    } else { // a ? b = c
+        int a=0,b=0,c=0;
+        int i=1;
+        while (i<=n && isdigit(s[i])) a=a*10+s[i]-'0',++i;
+        while (i<=n && !isdigit(s[i])) ++i;
+        while (i<=n && isdigit(s[i])) b=b*10+s[i]-'0',++i;
+        while (i<=n && !isdigit(s[i])) ++i;
+        while (i<=n && isdigit(s[i])) c=c*10+s[i]-'0',++i;
+        while (i<=n && !isdigit(s[i])) ++i;
+        if (a+b==c) putchar('+');
+        else if (a-b==c) putchar('-');
+        else if (a*b==c) putchar('*');
+        else putchar('/');
+    }
+    return 0;
+}
