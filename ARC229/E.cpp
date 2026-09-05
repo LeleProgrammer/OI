@@ -967,20 +967,20 @@ int main() {
                     ok=false;
                 }
             }
-            _for(t,st) {
-                int a=t.first,b=t.second;
-                if (p1.connected(a,b) && p3.connected(a,b) && !p2.connected(a,b)) {
-                    p2.merge(a,b);
-                    ok=false;
-                }
-            }
-            _for(t,st) {
-                int a=t.first,b=t.second;
-                if (p1.connected(a,b) && p2.connected(a,b) && !p3.connected(a,b)) {
-                    p3.merge(a,b);
-                    ok=false;
-                }
-            }
+            // _for(t,st) {
+            //     int a=t.first,b=t.second;
+            //     if (p1.connected(a,b) && p3.connected(a,b) && !p2.connected(a,b)) {
+            //         p2.merge(a,b);
+            //         ok=false;
+            //     }
+            // }
+            // _for(t,st) {
+            //     int a=t.first,b=t.second;
+            //     if (p1.connected(a,b) && p2.connected(a,b) && !p3.connected(a,b)) {
+            //         p3.merge(a,b);
+            //         ok=false;
+            //     }
+            // }
             if (ok) break;
         }
         map<int,vector<int>> mp;
